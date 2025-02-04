@@ -1,0 +1,25 @@
+{% extends "post/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="mb-4">Создать пост</h2>
+        <form method="post" class="bg-light p-4 rounded shadow-sm">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="id_title" class="form-label">Название</label>
+                {{ form.title }}
+            </div>
+            <div class="mb-3">
+                <label for="id_description" class="form-label">Описание</label>
+                {{ form.description }}
+            </div>
+            <div class="mb-3">
+                <label for="id_author" class="form-label">Автор</label>
+                {{ form.author }}
+            </div>
+            <button type="submit" class="btn btn-success">💾 Создать</button>
+        </form>
+        <a href="{% url 'post_list' %}" class="btn btn-secondary mt-3">🔙 Назад</a>
+    </div>
+{% endblock %}

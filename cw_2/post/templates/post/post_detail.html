@@ -1,0 +1,9 @@
+{% extends "post/base.html" %}
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="mb-3">{{ post.title }}</h1>
+        <p>{{ post.description }}</p>
+        <p><b>Автор:</b> {{ post.author }}</p>
+        <a href="{% url 'post_list' %}" class="btn btn-secondary mt-3">🔙 Назад</a>
+    </div>
+{% endblock %}

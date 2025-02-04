@@ -1,0 +1,8 @@
+<form method="post">
+    {% csrf_token %}
+    {% load static %}
+
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+<a href="{% url 'post_list' %}">Назад</a>
