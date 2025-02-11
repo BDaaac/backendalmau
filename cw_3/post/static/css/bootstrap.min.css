@@ -1,0 +1,115 @@
+/* Общий стиль */
+body {
+    background-color: #f4f7fc;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Контейнер */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+/* Заголовки */
+h1, h3 {
+    color: #333;
+    text-align: center;
+}
+
+/* Список тем */
+.list-group-item {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease-in-out;
+}
+
+.list-group-item:hover {
+    background: #f8f9fa;
+    transform: scale(1.02);
+}
+
+/* Ссылки */
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Кнопки */
+.btn {
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #bd2130;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+/* Модальное окно */
+.modal-content {
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+/* Форма */
+form {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Поля ввода */
+input, textarea {
+    border-radius: 5px !important;
+    border: 1px solid #ced4da;
+}
+
+/* Статусное сообщение */
+.alert {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}

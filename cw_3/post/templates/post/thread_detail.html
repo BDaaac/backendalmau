@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mb-4">{{ thread.name }}</h1>
+    <p class="text-muted">{{ thread.description }}</p>
+
+    <h3>Комментарии:</h3>
+    <ul class="list-group mb-4">
+        {% for post in posts %}
+            <li class="list-group-item">
+                <strong>{{ post.author }}</strong>: {{ post.description }}
+                <div class="mt-2">
+                    <a href="{% url 'post_edit' post.id %}" class="btn btn-sm btn-warning">Редактировать</a>
+                    <a href="{% url 'post_delete' post.id %}" class="btn btn-sm btn-danger">Удалить</a>
+                </div>
+            </li>
+        {% empty %}
+            <p class="text-muted">Комментариев пока нет.</p>
+        {% endfor %}
+    </ul>
+
+    <!-- Форма для добавления комментария -->
+    <h3>Добавить комментарий</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Добавить</button>
+    </form>
+
+    <a href="{% url 'thread_list' %}" class="btn btn-secondary mt-3">Назад</a>
+</div>
+{% endblock %}
