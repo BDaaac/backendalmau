@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Detail</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>{{ todo.title }}</h1>
+        <p class="description">{{ todo.description }}</p>
+        <p class="due-date">Due date: {{ todo.due_date }}</p>
+        <p class="status {% if todo.status %}completed{% else %}pending{% endif %}">
+            {% if todo.status %}✔ Completed{% else %}⏳ Pending{% endif %}
+        </p>
+<a href="{% url 'todo_list' %}">Back to list</a>
+    </div>
+</body>
+</html>

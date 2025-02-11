@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+ {% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Todo List</h1>
+        <ul class="todo-list">
+            {% for todo in todos %}
+                <li>
+                    <a href="{{ todo.id }}/">{{ todo.title }}</a>
+                    <span class="status {% if todo.status %}completed{% else %}pending{% endif %}">
+                        {% if todo.status %}✔ Completed{% else %}⏳ Pending{% endif %}
+                    </span>
+                    <a class="delete-btn" href="{{ todo.id }}/delete/">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <a class="btn" href="create/">Create Todo</a>
+    </div>
+</body>
+</html>
