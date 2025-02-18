@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список категорий</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+    <h1 class = 'mb-4'> Форма добавления</h1>
+    <form method="post" class="mb-3">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Добавить</button>
+    </form>
+<h1 class = 'mb-4'> Список</h1>
+<table class="table">
+    <thead class = "thead-dark">
+    <tr><th>Название</th><th>Описание</th><th>Действие</th></tr>
+    </thead>
+{% for thread in threads %}
+<tr>
+    <td>{{ thread.name }}</td><td>{{ thread.description }}</td><td><a href="{% url 'thread_edit' id=thread.id %}" class="btn btn-success">Изменить</a><a href="{% url 'thread_delete' id=thread.id %}" class="btn btn-danger">Удалить</a><a href="{% url 'post_to_thread' thread.id %}" class="btn btn-primary">Детали</a></td>
+</tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
