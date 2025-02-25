@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Мои посты{% endblock %}
+{% block content %}
+<div class="container">
+    <h2>Мои посты</h2>
+    {% if posts %}
+        {% for post in posts %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.description }}</p>
+                    <a href="{% url 'posts:detail' post.id %}" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>У вас пока нет постов.</p>
+    {% endif %}
+</div>
+{% endblock %}

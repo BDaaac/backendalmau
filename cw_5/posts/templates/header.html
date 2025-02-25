@@ -4,7 +4,7 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
                 {% if user.is_authenticated %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'posts:my_posts' %}">Мои посты</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'posts:my_posts' %}">Мои посты</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'posts:create' %}">Создать пост</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'posts:logout' %}">Выйти</a></li>
                 {% else %}
