@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Todo Details{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>{{ todo.title }}</h2>
+    <p><strong>Description:</strong> {{ todo.description }}</p>
+    <p><strong>Due Date:</strong> {{ todo.due_date }}</p>
+    <p><strong>Status:</strong>
+        {% if todo.status %}
+            <span class="badge badge-success">Completed</span>
+        {% else %}
+            <span class="badge badge-warning">Pending</span>
+        {% endif %}
+    </p>
+    <a href="/todos/" class="btn btn-secondary">Back</a>
+    <a href="/todos/{{ todo.id }}/delete/" class="btn btn-danger">Delete</a>
+</div>
+{% endblock %}

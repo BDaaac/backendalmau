@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Todos{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Your Todos</h2>
+    <a href="/todos/add/" class="btn btn-success mb-3">Add Todo</a>
+    <ul class="list-group">
+        {% for todo in todos %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="/todos/{{ todo.id }}/">{{ todo.title }}</a>
+                <span>
+                    {% if todo.status %}
+                        <span class="badge badge-success">Completed</span>
+                    {% else %}
+                        <span class="badge badge-warning">Pending</span>
+                    {% endif %}
+                    <a href="/todos/{{ todo.id }}/delete/" class="btn btn-danger btn-sm">Delete</a>
+                </span>
+            </li>
+        {% empty %}
+            <li class="list-group-item">No todos yet.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
