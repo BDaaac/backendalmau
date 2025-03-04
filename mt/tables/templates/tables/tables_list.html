@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Tables{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Tables List</h2>
+    <a href="{% url 'add_table' %}" class="btn btn-success mb-3">Add Table</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Seats</th>
+                <th>Availability</th>
+                <th>Actions</th> <!-- ✅ Добавляем заголовок для кнопок -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for table in tables %}
+            <tr>
+                <td>{{ table.number }}</td>
+                <td>{{ table.seats }}</td>
+                <td>{% if table.is_available %} ✅ Available {% else %} ❌ Not Available {% endif %}</td>
+                <td>  <!-- ✅ Кнопки редактирования и удаления -->
+                    <a href="{% url 'edit_table' table.id %}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="{% url 'delete_table' table.id %}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
