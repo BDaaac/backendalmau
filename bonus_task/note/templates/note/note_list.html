@@ -1,0 +1,22 @@
+{% extends 'note/base.html' %}
+
+{% block content %}
+    <h2 class="title">Список заметок</h2>
+
+    <div class="notes-container">
+        {% for note in notes %}
+            <div class="note-card">
+                <h3><a href="{% url 'note_detail' note.pk %}" class="note-title">{{ note.title }}</a></h3>
+                <p class="note-content">{{ note.content }}</p>
+                <div class="note-actions">
+                    <a href="{% url 'note_update' note.pk %}" class="btn edit">Редактировать</a>
+                    <a href="{% url 'note_delete' note.pk %}" class="btn delete">Удалить</a>
+                </div>
+            </div>
+        {% empty %}
+            <p class="no-notes">Нет заметок.</p>
+        {% endfor %}
+    </div>
+
+    <a href="{% url 'note_create' %}" class="btn add">Добавить заметку</a>
+{% endblock %}

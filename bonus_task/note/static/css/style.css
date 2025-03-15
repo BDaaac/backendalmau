@@ -1,0 +1,145 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 20px;
+    color: #333;
+}
+
+/* Заголовки */
+.title {
+    text-align: center;
+    color: #69409e;
+}
+
+/* Список заметок */
+.notes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.note-card, .note-detail-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 50%;
+    margin-bottom: 15px;
+}
+
+.note-title {
+    color: #5bc4eb;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.note-title:hover {
+    text-decoration: underline;
+}
+
+.note-content {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Дата создания заметки */
+.note-date {
+    font-size: 14px;
+    color: #777;
+    margin-top: 5px;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 12px;
+    margin-right: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.edit {
+    background-color: #5ba56e;
+    color: white;
+}
+
+.edit:hover {
+    background-color: #2c806f;
+}
+
+.delete {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.delete:hover {
+    background-color: #c0392b;
+}
+
+.add {
+    background-color: #69409e;
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    width: 200px;
+    text-align: center;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+.add:hover {
+    background-color: #5a328d;
+}
+
+.back {
+    background-color: #5bc4eb;
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    width: 150px;
+    text-align: center;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+.back:hover {
+    background-color: #3a94d1;
+}
+
+.save {
+    background-color: #2c806f;
+    color: white;
+}
+
+.save:hover {
+    background-color: #1f6655;
+}
+
+/* Если нет заметок */
+.no-notes {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+}
+
+/* Форма */
+.form-container, .delete-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+}
+
+.note-form input, .note-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
