@@ -21,7 +21,6 @@ urlpatterns = [
         'get':'list','post':'create'
     }), name='comment-list'),
     path('', views.post_list, name='post-list'),
-    path('', views.post_list, name='post-list'),
 
     # Создание нового поста
     path('posts/create/', views.post_create, name='post-create'),
